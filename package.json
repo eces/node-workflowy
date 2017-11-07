@@ -1,0 +1,38 @@
+{
+  "name": "workflowy",
+  "version": "1.0.0",
+  "description": "API for workflowy.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha ./test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eces/node-workflowy.git"
+  },
+  "keywords": [
+    "workflowy"
+  ],
+  "author": "Jin Lee <eces92@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eces/node-workflowy/issues"
+  },
+  "homepage": "https://github.com/eces/node-workflowy#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "debug": "^3.1.0",
+    "debugs": "^1.0.6",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  },
+  "debugs": [
+    "node-workflowy:client",
+    "node-workflowy:test",
+    "node-workflowy*"
+  ]
+}
