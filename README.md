@@ -67,6 +67,7 @@ console.log(list)
       "id": "5ccdd627-5842-6184-9e60-6269846bbe9f",
       "name": "🙈 make list, not war ",
       "note": "multiline text\nutf8\nand\nso on ...",
+      "is_completed": true,
       "children": []
     }
   ]

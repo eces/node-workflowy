@@ -21,6 +21,7 @@ describe('node-workflowy', () => {
       debug(JSON.stringify(list, null, '  '))
       assert.instanceOf(list, Workflowy.WorkflowyList)
 
+      let count_is_completed = 0
       const check = function (item) {
         assert.property(item, 'id')
         assert.isString(item.id)
@@ -28,10 +29,14 @@ describe('node-workflowy', () => {
         assert.property(item, 'note')
         assert.property(item, 'children')
         assert.isArray(item.children)
+        if (item.is_completed) {
+          count_is_completed++
+        }
         item.children.forEach(check)
       }
 
       check(list)
+      assert.equal(count_is_completed, 1)
     }).timeout(9000)
   })
 })

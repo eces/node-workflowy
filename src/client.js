@@ -7,6 +7,7 @@ class WorkflowyList {
     this.id = v.id
     this.name = v.nm || v.name
     this.note = v.no || v.note
+    this.is_completed = Boolean(v.cp) || v.is_completed
     this.children = (v.ch || v.children || []).map(e => {
       return new WorkflowyList(e)
     })
