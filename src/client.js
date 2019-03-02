@@ -1,5 +1,4 @@
 const url = require('url')
-const cheerio = require('cheerio')
 const debug = require('debug')('node-workflowy:client')
 
 class WorkflowyList {
