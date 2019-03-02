@@ -46,15 +46,23 @@ class WorkflowyClient {
         throw new Error('not authorized yet')
       }
     }
+    // init session id
+    await this.request.get({
+      uri: full_url,
+    })
     const json = await this.request({
       uri: `https://workflowy.com/get_initialization_data`,
       method: 'get',
       qs: {
         share_id: urlObj.pathname.replace('/s/', ''),
-        client_version: 18,
+        client_version: 20
       },
-      json: true,
-    })
+      headers: {
+        'user-agent': 'https://github.com/eces/node-workflowy (I Love Workflowy)'
+      },
+      json: true
+    });
+    debug(json)
 
     json.projectTreeData.mainProjectTreeInfo.rootProject.ch = 
       (json.projectTreeData.mainProjectTreeInfo.rootProjectChildren || []).map(e => {
